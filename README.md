@@ -1,6 +1,6 @@
 # mukeshkcgupta.in
 
-Personal portfolio and resume website for **Mukesh Gupta** — Member of Technical Staff III at Cohesity, with 9+ years of experience in distributed storage, data protection, and cloud-native backend engineering.
+Personal portfolio and resume website for **Mukesh Gupta** — Member of Technical Staff III at Cohesity, with 10+ years of experience in distributed storage, data protection, and cloud-native backend engineering.
 
 🌐 **Live site:** [mukeshkcgupta.in](https://mukeshkcgupta.in)
 

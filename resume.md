@@ -19,7 +19,7 @@ title: Resume
 <div class="resume-section">
   <div class="resume-section-title">Summary</div>
   <ul style="padding-left:1.2rem;color:var(--muted);font-size:0.95rem;">
-    <li style="margin-bottom:0.6rem;">9+ years of backend and systems engineering, specialising in distributed storage, data protection, and cloud-native platform development across enterprise-scale products.</li>
+    <li style="margin-bottom:0.6rem;">10+ years of backend and systems engineering, specialising in distributed storage, data protection, and cloud-native platform development across enterprise-scale products.</li>
     <li style="margin-bottom:0.6rem;">Delivered production features spanning microservices (Docker/Kubernetes), event-driven messaging (Kafka, RabbitMQ), cloud platforms (AWS, Azure), and system-level C/C++ and Python development.</li>
     <li>Proven track record owning the full engineering lifecycle: architecture exploration, multi-vendor API integration, customer POC delivery, and hotfix turnaround under aggressive timelines.</li>
   </ul>
