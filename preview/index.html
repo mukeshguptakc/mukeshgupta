@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mukesh Gupta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="site-name" href="index.html">Mukesh Gupta</a>
+      <nav class="site-nav">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="skills.html" class="nav-link">Skills</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="resume.html" class="nav-link">Resume</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
+    </div>
+  </header>
+
+  <main class="site-content">
+    <section class="home-hero">
+      <p class="home-greeting">// hello, world</p>
+      <h1 class="home-name">Mukesh Gupta</h1>
+      <p class="home-tagline">
+        <span>Distributed Systems</span> &middot; Storage &amp; Cloud &middot; Containers &middot; Backend Engineering
+      </p>
+      <div class="home-actions">
+        <a href="about.html" class="btn btn-primary">About Me</a>
+        <a href="https://www.linkedin.com/in/mukesh-gupta-847a54105/" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
+        <a href="resume.html" class="btn btn-outline">Resume</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Mukesh Gupta &mdash;
+      <a href="https://www.linkedin.com/in/mukesh-gupta-847a54105/" target="_blank" rel="noopener">LinkedIn</a>
+    </p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const nav = document.querySelector('.site-nav');
+    toggle.addEventListener('click', () => nav.classList.toggle('open'));
+  </script>
+</body>
+</html>

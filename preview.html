@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mukesh Gupta — Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0d1117; --bg-card: #161b22; --border: #30363d;
+      --text: #e6edf3; --muted: #8b949e; --accent: #58a6ff; --accent2: #3fb950;
+      --font-sans: 'Inter', sans-serif; --font-mono: 'JetBrains Mono', monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-sans); font-size: 16px; line-height: 1.7; min-height: 100vh; display: flex; flex-direction: column; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Header */
+    .site-header { position: sticky; top: 0; z-index: 100; background: rgba(13,17,23,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+    .header-inner { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; height: 60px; display: flex; align-items: center; gap: 2rem; }
+    .site-name { font-family: var(--font-mono); font-size: 1rem; font-weight: 500; color: var(--accent2); white-space: nowrap; flex-shrink: 0; cursor: pointer; }
+    .site-name:hover { opacity: 0.85; }
+    .site-nav { display: flex; gap: 0.25rem; margin-left: auto; }
+    .nav-link { font-size: 0.875rem; font-weight: 500; color: var(--muted); padding: 0.35rem 0.85rem; border-radius: 6px; transition: color 0.2s, background 0.2s; cursor: pointer; border: none; background: none; font-family: var(--font-sans); }
+    .nav-link:hover { color: var(--text); background: var(--bg-card); }
+    .nav-link.active { color: var(--accent); background: rgba(88,166,255,0.1); }
+    .nav-toggle { display: none; background: none; border: none; color: var(--text); font-size: 1.4rem; cursor: pointer; margin-left: auto; }
+
+    /* Content */
+    .site-content { max-width: 960px; margin: 0 auto; padding: 3rem 1.5rem; width: 100%; flex: 1; }
+    .page { display: none; }
+    .page.active { display: block; }
+
+    /* Footer */
+    .site-footer { border-top: 1px solid var(--border); text-align: center; padding: 1.5rem; color: var(--muted); font-size: 0.85rem; }
+
+    /* Home */
+    .home-hero { display: flex; flex-direction: column; justify-content: center; min-height: 70vh; gap: 1.25rem; }
+    .home-greeting { font-family: var(--font-mono); color: var(--accent2); font-size: 1rem; }
+    .home-name { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
+    .home-tagline { font-size: 1.1rem; color: var(--muted); max-width: 520px; }
+    .home-tagline span { color: var(--accent); }
+    .home-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 0.5rem; }
+
+    /* Buttons */
+    .btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.6rem 1.4rem; border-radius: 8px; font-size: 0.9rem; font-weight: 500; transition: opacity 0.2s, transform 0.15s; cursor: pointer; border: none; font-family: var(--font-sans); }
+    .btn:hover { opacity: 0.85; transform: translateY(-1px); text-decoration: none; }
+    .btn-primary { background: var(--accent); color: #0d1117; }
+    .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* Page header */
+    .page-header { margin-bottom: 2.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+    .page-header h1 { font-size: 2rem; font-weight: 700; }
+    .page-header p { color: var(--muted); margin-top: 0.4rem; }
+
+    /* Cards */
+    .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; transition: border-color 0.2s; }
+    .card:hover { border-color: var(--accent); }
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; }
+
+    /* About */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .about-bio p { color: var(--muted); margin-bottom: 1rem; }
+    .about-bio p strong { color: var(--text); }
+    .interests-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .interests-list li { display: flex; align-items: center; gap: 0.6rem; color: var(--muted); font-size: 0.95rem; }
+    .interests-list li::before { content: "▸"; color: var(--accent2); flex-shrink: 0; }
+
+    /* Skills */
+    .skills-section { margin-bottom: 2.5rem; }
+    .skills-section h2 { font-size: 1.1rem; font-weight: 600; color: var(--accent); margin-bottom: 1rem; font-family: var(--font-mono); }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .tag { background: rgba(88,166,255,0.08); border: 1px solid rgba(88,166,255,0.2); color: var(--text); font-size: 0.82rem; font-family: var(--font-mono); padding: 0.3rem 0.75rem; border-radius: 20px; }
+
+    /* Projects */
+    .project-card h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .project-card p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem; }
+
+    /* Resume */
+    .resume-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem; }
+    .resume-name { font-size: 1.6rem; font-weight: 700; }
+    .resume-title { color: var(--muted); font-size: 1rem; margin-top: 0.2rem; }
+    .resume-section { margin-bottom: 2rem; }
+    .resume-section h2 { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); font-family: var(--font-mono); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    .resume-entry { margin-bottom: 1.25rem; }
+    .resume-entry-header { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.25rem; }
+    .resume-entry-title { font-weight: 600; font-size: 0.95rem; }
+    .resume-entry-org { color: var(--accent2); font-size: 0.9rem; }
+    .resume-entry-date { color: var(--muted); font-size: 0.82rem; font-family: var(--font-mono); }
+    .resume-entry ul { margin-top: 0.5rem; padding-left: 1.2rem; color: var(--muted); font-size: 0.9rem; }
+    .resume-entry ul li { margin-bottom: 0.25rem; }
+    .resume-note { background: rgba(63,185,80,0.08); border: 1px solid rgba(63,185,80,0.2); border-radius: 8px; padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--muted); margin-bottom: 1.5rem; }
+    .resume-note a { color: var(--accent2); }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .nav-toggle { display: block; }
+      .site-nav { display: none; position: absolute; top: 60px; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--border); flex-direction: column; padding: 0.75rem 1.5rem; gap: 0.25rem; }
+      .site-nav.open { display: flex; }
+      .about-grid { grid-template-columns: 1fr; }
+      .resume-header { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <span class="site-name" onclick="showPage('home')">Mukesh Gupta</span>
+      <nav class="site-nav" id="siteNav">
+        <button class="nav-link active" onclick="showPage('home')">Home</button>
+        <button class="nav-link" onclick="showPage('about')">About</button>
+        <button class="nav-link" onclick="showPage('skills')">Skills</button>
+        <button class="nav-link" onclick="showPage('projects')">Projects</button>
+        <button class="nav-link" onclick="showPage('resume')">Resume</button>
+      </nav>
+      <button class="nav-toggle" id="navToggle">&#9776;</button>
+    </div>
+  </header>
+
+  <main class="site-content">
+
+    <!-- HOME -->
+    <div class="page active" id="page-home">
+      <section class="home-hero">
+        <p class="home-greeting">// hello, world</p>
+        <h1 class="home-name">Mukesh Gupta</h1>
+        <p class="home-tagline">
+          <span>Distributed Systems</span> &middot; Storage &amp; Cloud &middot; Containers &middot; Backend Engineering
+        </p>
+        <div class="home-actions">
+          <button class="btn btn-primary" onclick="showPage('about')">About Me</button>
+          <a href="https://www.linkedin.com/in/mukesh-gupta-847a54105/" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
+          <button class="btn btn-outline" onclick="showPage('resume')">Resume</button>
+        </div>
+      </section>
+    </div>
+
+    <!-- ABOUT -->
+    <div class="page" id="page-about">
+      <div class="page-header">
+        <h1>About Me</h1>
+        <p>Backend &amp; systems engineer with 9+ years in distributed storage and cloud-native platforms</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-bio">
+          <p>I'm <strong>Mukesh Gupta</strong>, a Member of Technical Staff III (MTS-III) at Cohesity, specialising in distributed storage, data protection, and cloud-native backend platform development. Over the past 9+ years, I've built and shipped enterprise-scale features at <strong>Cohesity</strong> and <strong>Veritas Technologies</strong>.</p>
+          <p>My work spans the full engineering lifecycle — from architecture exploration and multi-vendor API integration to customer POC delivery and hotfix turnaround under aggressive timelines. I've worked deep in storage systems (NAS/SAN), cloud platforms (AWS, Azure), and microservices infrastructure (Docker, Kubernetes, Kafka).</p>
+          <p>I enjoy working at the intersection of systems programming and backend engineering — whether that's bridging C SDKs into Python with ctypes, designing snapshot-diff frameworks backed by SQLite, or debugging multi-OS concurrency issues across Linux, Solaris, and AIX.</p>
+          <div style="margin-top:1.5rem;">
+            <a href="https://www.linkedin.com/in/mukesh-gupta-847a54105/" target="_blank" rel="noopener" class="btn btn-outline">Connect on LinkedIn</a>
+          </div>
+        </div>
+        <div>
+          <h2 style="font-size:1rem;font-weight:600;margin-bottom:1rem;color:var(--accent);font-family:var(--font-mono);">// interests</h2>
+          <ul class="interests-list">
+            <li>Distributed Systems &amp; Architecture</li>
+            <li>Storage Systems (NAS / SAN)</li>
+            <li>Containers &amp; Orchestration (Docker / Kubernetes)</li>
+            <li>Cloud Platforms (AWS, Azure, GCP)</li>
+            <li>Event-Driven Microservices</li>
+            <li>Data Protection &amp; Snapshot Engineering</li>
+            <li>Systems-Level Programming (C / Python)</li>
+            <li>Embedded Linux &amp; Device Drivers</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="page" id="page-skills">
+      <div class="page-header">
+        <h1>Skills</h1>
+        <p>Technologies and tools I work with</p>
+      </div>
+      <div class="skills-section">
+        <h2>// languages</h2>
+        <div class="skill-tags">
+          <span class="tag">Python</span><span class="tag">C</span><span class="tag">C++</span><span class="tag">Shell Scripting</span><span class="tag">Go</span>
+        </div>
+      </div>
+      <div class="skills-section">
+        <h2>// distributed systems &amp; backend</h2>
+        <div class="skill-tags">
+          <span class="tag">Microservices</span><span class="tag">Event-Driven Architecture</span><span class="tag">Kafka</span><span class="tag">RabbitMQ</span><span class="tag">REST API Design</span><span class="tag">Async Processing Pipelines</span><span class="tag">Multi-Vendor SDK Integration</span><span class="tag">ctypes Bridging</span>
+        </div>
+      </div>
+      <div class="skills-section">
+        <h2>// containers &amp; orchestration</h2>
+        <div class="skill-tags">
+          <span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Linux (RHEL / SUSE)</span><span class="tag">Solaris</span><span class="tag">AIX</span>
+        </div>
+      </div>
+      <div class="skills-section">
+        <h2>// cloud platforms</h2>
+        <div class="skill-tags">
+          <span class="tag">AWS (EC2, IAM, Cross-Account Trust)</span><span class="tag">Azure (ANF, Marketplace)</span><span class="tag">GCP</span><span class="tag">IAM &amp; Role-Based Access</span>
+        </div>
+      </div>
+      <div class="skills-section">
+        <h2>// storage systems</h2>
+        <div class="skill-tags">
+          <span class="tag">NetApp (ZAPI, REST, NMSDK/OCUM)</span><span class="tag">Dell EMC Isilon / PowerScale</span><span class="tag">Dell EMC PowerMax / Unity</span><span class="tag">Pure Storage FlashArray</span><span class="tag">Qumulo (V1–V3)</span><span class="tag">NAS (NFS / SMB)</span><span class="tag">SAN</span>
+        </div>
+      </div>
+      <div class="skills-section">
+        <h2>// data protection</h2>
+        <div class="skill-tags">
+          <span class="tag">Snapshot Orchestration</span><span class="tag">Snapshot-Diff / Incremental Backup</span><span class="tag">Replication Workflows</span><span class="tag">Consistency Groups</span><span class="tag">SQLite-backed Diff Storage</span>
+        </div>
+      </div>
+      <div class="skills-section">
+        <h2>// tools &amp; practices</h2>
+        <div class="skill-tags">
+          <span class="tag">Git</span><span class="tag">Jira</span><span class="tag">VS Code</span><span class="tag">Performance Tuning</span><span class="tag">Concurrency Debugging</span><span class="tag">Multi-OS Systems</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="page" id="page-projects">
+      <div class="page-header">
+        <h1>Projects &amp; Areas of Expertise</h1>
+        <p>Themes that define my engineering journey</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1.5rem;">
+
+        <div class="card project-card">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+            <span style="font-size:1.4rem;">🗄️</span>
+            <h3 style="margin:0;">Enterprise Storage Ecosystem — NAS &amp; SAN Expertise</h3>
+          </div>
+          <p style="margin-bottom:1rem;">
+            Worked deeply across the enterprise storage landscape — not just integrating APIs, but genuinely understanding what makes each vendor's offering unique and how to leverage those strengths to deliver better data protection. Every storage vendor has a distinct architecture and a key USP; the work has always been about mapping those capabilities onto our product in a way that makes the integration feel native, not bolted on.
+          </p>
+          <p style="margin-bottom:1rem;">
+            <strong style="color:var(--text);">Pure Storage FlashArray</strong> — leveraged Managed Directories for granular, VM-level snapshotting; integrated REST 2.x APIs and File Services for NFS/SMB multi-protocol share deployment.<br><br>
+            <strong style="color:var(--text);">NetApp</strong> — deep integration across ZAPI, REST, and NMSDK/OCUM APIs; designed vendor-agnostic replication workflows; built snapshot-diff infrastructure using NetApp's V3 diff API bridged into Python via ctypes.<br><br>
+            <strong style="color:var(--text);">Dell EMC Isilon / PowerScale</strong> — resolved complex SmartConnect (DNS delegation, load balancing, failover) and SMB Multichannel configurations; built changelist-based incremental backup framework; root-caused and fixed a critical SDK defect affecting files &gt;4 GB.<br><br>
+            <strong style="color:var(--text);">Qumulo</strong> — migrated plugin through V1→V2→V3 API lifecycle; designed Tenant-ID-to-VLAN mapping logic for multi-tenant NFS/SMB environments while preserving backward compatibility with single-tenant deployments.<br><br>
+            <strong style="color:var(--text);">PowerMax &amp; EMC Unity</strong> — extended snapshot and backup workflows to SAN multi-volume environments, standardising consistency group snapshots across vendors.
+          </p>
+          <div class="skill-tags">
+            <span class="tag">NetApp (ZAPI, REST, NMSDK)</span><span class="tag">Dell EMC Isilon / PowerScale</span><span class="tag">Pure Storage FlashArray</span><span class="tag">Qumulo V1–V3</span><span class="tag">PowerMax / EMC Unity</span><span class="tag">NAS (NFS / SMB)</span><span class="tag">SAN</span><span class="tag">Snapshot Orchestration</span><span class="tag">Incremental Backup</span><span class="tag">Python</span><span class="tag">C / ctypes</span>
+          </div>
+        </div>
+
+        <div class="card project-card">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+            <span style="font-size:1.4rem;">☁️</span>
+            <h3 style="margin:0;">Cloud Data Protection — Azure &amp; AWS</h3>
+          </div>
+          <p style="margin-bottom:1rem;">
+            Extended data protection capabilities into the cloud by understanding each platform's architecture and working with its native constructs rather than against them. On AWS, this meant implementing IAM role-based configuration with cross-account trust, designing a versioned schema that handled both instance roles and access keys, and managing seamless upgrades without disrupting existing deployments. On Azure, the work spanned both deep technical exploration and end-to-end product delivery.
+          </p>
+          <p style="margin-bottom:1rem;">
+            <strong style="color:var(--text);">Azure NetApp Files (ANF)</strong> — analysed the dedicated ANF infrastructure (distinct from Azure Blob/File), including NetApp Accounts, Capacity Pools, Volumes, and Snapshots; consolidated findings into reusable guidelines for future snapshot and backup workflow support.<br><br>
+            <strong style="color:var(--text);">Azure Marketplace Publishing</strong> — delivered end-to-end product publishing: compliance research, customised deployment packaging, thorough validation, post-launch support, and ongoing monitoring to ensure smooth customer adoption.
+          </p>
+          <div class="skill-tags">
+            <span class="tag">Azure (ANF, Marketplace)</span><span class="tag">AWS (IAM, EC2)</span><span class="tag">Cross-Account Trust</span><span class="tag">Cloud-Native Architecture</span><span class="tag">IAM Role-Based Config</span><span class="tag">Python</span>
+          </div>
+        </div>
+
+        <div class="card project-card">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+            <span style="font-size:1.4rem;">🧭</span>
+            <h3 style="margin:0;">Guide, Mentor &amp; Always a Learner</h3>
+          </div>
+          <p style="margin-bottom:1rem;">
+            Engineering is as much about growing people and sharing knowledge as it is about writing code. Across my work I've consistently taken ownership of onboarding teammates onto complex integrations — running TOI sessions, leading POC walkthroughs, documenting reusable guidelines, and aligning teams on vendor-specific nuances before they hit a wall.
+          </p>
+          <p style="margin-bottom:1rem;">
+            Led cross-vendor NAS enablement efforts, mentored on SAN replication infrastructure, guided the team through snapshot architecture comparisons (Pure vs. NetApp), and helped build internal knowledge assets that outlasted individual features. At the same time, every new vendor, every new API version, every customer escalation has been an opportunity to learn something non-obvious about how storage systems actually work under the hood.
+          </p>
+          <div class="skill-tags">
+            <span class="tag">Technical Mentorship</span><span class="tag">TOI Sessions</span><span class="tag">POC Delivery</span><span class="tag">Architecture Reviews</span><span class="tag">Documentation</span><span class="tag">Customer Escalations</span><span class="tag">Cross-Functional Collaboration</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RESUME -->
+    <div class="page" id="page-resume">
+      <div class="resume-header">
+        <div>
+          <div class="resume-name">Mukesh Gupta</div>
+          <div class="resume-title">Member of Technical Staff III (MTS-III) &mdash; Storage, Distributed Systems &amp; Backend Platform</div>
+        </div>
+        <a href="https://www.linkedin.com/in/mukesh-gupta-847a54105/" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn Profile</a>
+      </div>
+      <div class="resume-note">
+        Contact details are intentionally omitted. Reach out via <a href="https://www.linkedin.com/in/mukesh-gupta-847a54105/" target="_blank" rel="noopener">LinkedIn</a>.
+      </div>
+
+      <div class="resume-section">
+        <h2>Summary</h2>
+        <div class="resume-entry">
+          <ul>
+            <li>9+ years of backend and systems engineering experience, specialising in distributed storage, data protection, and cloud-native platform development across enterprise-scale products.</li>
+            <li>Delivered production features spanning microservices (Docker/Kubernetes), event-driven messaging (Kafka, RabbitMQ), cloud platforms (AWS, Azure), and system-level C/C++ and Python development.</li>
+            <li>Proven track record of owning the full engineering lifecycle: architecture exploration, multi-vendor API integration, cross-functional stakeholder alignment, customer POC delivery, and hotfix turnaround under aggressive timelines.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="resume-section">
+        <h2>Experience</h2>
+        <div class="resume-entry">
+          <div class="resume-entry-header">
+            <div><div class="resume-entry-title">Member of Technical Staff III (MTS-III)</div><div class="resume-entry-org">Cohesity NetBackup</div></div>
+            <div class="resume-entry-date">Dec 2024 – Present &bull; Pune, India</div>
+          </div>
+          <ul>
+            <li><strong>Qumulo Multi-Tenancy Enablement:</strong> Resolved a critical customer escalation by migrating the plugin from legacy V1/V2 to V3 APIs, designing Tenant-ID-to-VLAN mapping logic, and refactoring tenant-specific snapshot/export/deletion flows while preserving backward compatibility.</li>
+            <li><strong>Pure Storage FlashArray File Services:</strong> Extended plugin support by integrating REST 2.x APIs and SDK, enabling reliable NFS/SMB multi-protocol share deployment.</li>
+            <li><strong>Isilon SDK Bug Discovery &amp; Fix:</strong> Root-caused snapshot-diff failures to a hardcoded size-validation defect in the vendor SDK (triggered on files &gt;4 GB), patched locally and delivered a tested build to QA within days.</li>
+            <li><strong>Isilon Network Architecture &amp; PowerScale POC:</strong> Recommended a segregated network design and simulated the full PowerScale environment in-house. Validated SmartConnect DNS delegation, load balancing, failover, and SMB Multichannel optimisation.</li>
+            <li><strong>Azure NetApp Files Exploration:</strong> Analysed ANF architecture and consolidated findings into reusable internal guidelines for future snapshot and backup workflow support.</li>
+          </ul>
+        </div>
+        <div class="resume-entry">
+          <div class="resume-entry-header">
+            <div><div class="resume-entry-title">Senior Software Engineer</div><div class="resume-entry-org">Veritas Technologies</div></div>
+            <div class="resume-entry-date">Mar 2022 – Nov 2024 &bull; Pune, India</div>
+          </div>
+          <ul>
+            <li><strong>Cross-Vendor NAS Enablement:</strong> Implemented core APIs and infrastructure to extend NAS (NFS/SMB) support across multiple on-premise storage array vendors; mentored team members on integration patterns.</li>
+            <li><strong>NetApp Replication Development:</strong> Designed a generic replication format and implemented multi-threaded API handling that improved discovery performance by over 80%.</li>
+            <li><strong>Snapshot Diff Infrastructure:</strong> Built a reusable snapshot-diff framework using ctypes to bridge the C SDK into Python, backed by SQLite.</li>
+            <li><strong>SAN Multi-Volume / Consistency Group Snapshots:</strong> Standardised REST API payloads across Pure Storage FlashArray, PowerMax, and EMC Unity to enable simultaneous point-in-time consistency group backups.</li>
+          </ul>
+        </div>
+        <div class="resume-entry">
+          <div class="resume-entry-header">
+            <div><div class="resume-entry-title">Software Engineer</div><div class="resume-entry-org">Veritas Technologies</div></div>
+            <div class="resume-entry-date">Jun 2019 – Mar 2022 &bull; Pune, India</div>
+          </div>
+          <ul>
+            <li><strong>AWS IAM Role-Based Configuration:</strong> Implemented IAM role-based config for AWS deployments with a versioned vendor-agnostic schema and cross-account trust support.</li>
+            <li><strong>Licensing Module:</strong> Migrated to VLIC format, built a Docker-based licensing service, implemented metering by disk size, supported multiple license types with feature toggles.</li>
+            <li><strong>Telemetry &amp; Azure Marketplace:</strong> Designed configurable telemetry and delivered end-to-end Azure Marketplace product publishing.</li>
+          </ul>
+        </div>
+        <div class="resume-entry">
+          <div class="resume-entry-header">
+            <div><div class="resume-entry-title">Associate Software Engineer</div><div class="resume-entry-org">Veritas Technologies</div></div>
+            <div class="resume-entry-date">Jan 2016 – May 2019 &bull; Pune, India</div>
+          </div>
+          <ul>
+            <li><strong>Pure Storage Snapshot Orchestration:</strong> Extended snapshot support for Pure Storage as a new vendor integration within the CloudPoint product.</li>
+            <li><strong>Volume Manager — Escalations &amp; Maintenance:</strong> Resolved critical bugs across Linux (RHEL/SUSE), Solaris, and AIX, ensuring correctness of Dynamic Multipathing.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="resume-section">
+        <h2>Education</h2>
+        <div class="resume-entry">
+          <div class="resume-entry-header">
+            <div><div class="resume-entry-title">PG Diploma in Embedded Systems and Design</div><div class="resume-entry-org">Sunbeam CDAC ACTS, Pune</div></div>
+            <div class="resume-entry-date">2015</div>
+          </div>
+        </div>
+        <div class="resume-entry">
+          <div class="resume-entry-header">
+            <div><div class="resume-entry-title">B.E. in Electronics and Communication</div><div class="resume-entry-org">Leelavati Awhad Institute of Engineering, Mumbai University</div></div>
+            <div class="resume-entry-date">2014</div>
+          </div>
+        </div>
+        <div class="resume-entry">
+          <div class="resume-entry-header">
+            <div><div class="resume-entry-title">Diploma in Electronics and Communication</div><div class="resume-entry-org">S. S. Jondhle Polytechnic, Maharashtra State Board of Technical Education</div></div>
+            <div class="resume-entry-date">2011</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="resume-section">
+        <h2>Skills</h2>
+        <div class="skill-tags">
+          <span class="tag">Python</span><span class="tag">C / C++</span><span class="tag">Shell Scripting</span><span class="tag">Go</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Kafka</span><span class="tag">RabbitMQ</span><span class="tag">AWS (IAM, EC2)</span><span class="tag">Azure</span><span class="tag">GCP</span><span class="tag">NetApp (ZAPI, REST)</span><span class="tag">Dell EMC Isilon / PowerScale</span><span class="tag">Pure Storage FlashArray</span><span class="tag">Qumulo</span><span class="tag">NAS / SAN</span><span class="tag">Microservices</span><span class="tag">REST API Design</span><span class="tag">Snapshot Orchestration</span><span class="tag">Linux (RHEL/SUSE)</span><span class="tag">SQLite</span><span class="tag">Git</span>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Mukesh Gupta &mdash;
+      <a href="https://www.linkedin.com/in/mukesh-gupta-847a54105/" target="_blank" rel="noopener">LinkedIn</a>
+    </p>
+  </footer>
+
+  <script>
+    function showPage(id) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.nav-link').forEach(n => n.classList.remove('active'));
+      document.getElementById('page-' + id).classList.add('active');
+      const btns = document.querySelectorAll('.nav-link');
+      const labels = ['home','about','skills','projects','resume'];
+      btns[labels.indexOf(id)].classList.add('active');
+      window.scrollTo(0, 0);
+      document.getElementById('siteNav').classList.remove('open');
+    }
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('siteNav').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

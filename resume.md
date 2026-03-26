@@ -1,0 +1,167 @@
+---
+layout: default
+title: Resume
+---
+
+<div class="resume-header">
+  <div>
+    <div class="resume-name">Mukesh Gupta</div>
+    <div class="resume-title">Member of Technical Staff III (MTS-III) &mdash; Storage, Distributed Systems &amp; Backend Platform</div>
+  </div>
+  <a href="https://www.linkedin.com/in/mukesh-gupta-847a54105/" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn Profile</a>
+</div>
+
+<div class="resume-note">
+  Contact details are intentionally omitted here. Reach out via
+  <a href="https://www.linkedin.com/in/mukesh-gupta-847a54105/" target="_blank" rel="noopener">LinkedIn</a>.
+</div>
+
+<!-- ── Summary ──────────────────────────────────────── -->
+<div class="resume-section">
+  <h2>Summary</h2>
+  <div class="resume-entry">
+    <ul>
+      <li>9+ years of backend and systems engineering experience, specialising in distributed storage, data protection, and cloud-native platform development across enterprise-scale products.</li>
+      <li>Delivered production features spanning microservices (Docker/Kubernetes), event-driven messaging (Kafka, RabbitMQ), cloud platforms (AWS, Azure), and system-level C/C++ and Python development — from individual contributor to technical lead on complex vendor integrations and customer escalations.</li>
+      <li>Proven track record of owning the full engineering lifecycle: architecture exploration, multi-vendor API integration, cross-functional stakeholder alignment, customer POC delivery, and hotfix turnaround under aggressive timelines.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ── Experience ────────────────────────────────────── -->
+<div class="resume-section">
+  <h2>Experience</h2>
+
+  <div class="resume-entry">
+    <div class="resume-entry-header">
+      <div>
+        <div class="resume-entry-title">Member of Technical Staff III (MTS-III)</div>
+        <div class="resume-entry-org">Cohesity NetBackup</div>
+      </div>
+      <div class="resume-entry-date">Dec 2024 – Present &bull; Pune, India</div>
+    </div>
+    <ul>
+      <li><strong>Qumulo Multi-Tenancy Enablement:</strong> Resolved a critical customer escalation by migrating the plugin from legacy V1/V2 to V3 APIs, designing Tenant-ID-to-VLAN mapping logic, and refactoring tenant-specific snapshot/export/deletion flows while preserving backward compatibility.</li>
+      <li><strong>Pure Storage FlashArray File Services:</strong> Extended plugin support by integrating REST 2.x APIs and SDK, validating payloads with Pure engineering, enabling reliable NFS/SMB multi-protocol share deployment.</li>
+      <li><strong>Isilon SDK Bug Discovery &amp; Fix:</strong> Root-caused snapshot-diff failures to a hardcoded size-validation defect in the vendor SDK (triggered on files &gt;4 GB), patched locally, escalated via GitHub, and delivered a tested build to QA within days.</li>
+      <li><strong>Isilon Network Architecture &amp; PowerScale POC:</strong> Recommended a segregated network design (GroupNets, subnets, IP pools, access zones) and simulated the full PowerScale environment in-house. Validated SmartConnect DNS delegation, load balancing, failover, and SMB Multichannel optimisation.</li>
+      <li><strong>Azure NetApp Files Exploration:</strong> Analysed ANF architecture and consolidated findings into reusable internal guidelines for future snapshot and backup workflow support.</li>
+    </ul>
+  </div>
+
+  <div class="resume-entry">
+    <div class="resume-entry-header">
+      <div>
+        <div class="resume-entry-title">Senior Software Engineer</div>
+        <div class="resume-entry-org">Veritas Technologies</div>
+      </div>
+      <div class="resume-entry-date">Mar 2022 – Nov 2024 &bull; Pune, India</div>
+    </div>
+    <ul>
+      <li><strong>Cross-Vendor NAS Enablement:</strong> Implemented core APIs and infrastructure to extend NAS (NFS/SMB) support across multiple on-premise storage array vendors; mentored team members on integration patterns and networking/storage requirements.</li>
+      <li><strong>NetApp Replication Development:</strong> Designed a generic replication format, integrated NetApp ZAPI, REST, and NMSDK/OCUM APIs, and implemented multi-threaded API handling that improved discovery performance by over 80%.</li>
+      <li><strong>Snapshot Diff Infrastructure:</strong> Built a reusable snapshot-diff framework using ctypes to bridge the C SDK into Python, backed by SQLite — standardising incremental backup across all vendor plugins.</li>
+      <li><strong>SAN Multi-Volume / Consistency Group Snapshots:</strong> Standardised REST API payloads across Pure Storage FlashArray, PowerMax, and EMC Unity to enable simultaneous point-in-time consistency group backups.</li>
+      <li><strong>SAN Replication — Team Mentorship:</strong> Diagnosed a critical LUN sequencing mismatch between ONTAP REST and ZAPI APIs and delivered a resilient infrastructure-layer fix to preserve project timelines.</li>
+    </ul>
+  </div>
+
+  <div class="resume-entry">
+    <div class="resume-entry-header">
+      <div>
+        <div class="resume-entry-title">Software Engineer</div>
+        <div class="resume-entry-org">Veritas Technologies</div>
+      </div>
+      <div class="resume-entry-date">Jun 2019 – Mar 2022 &bull; Pune, India</div>
+    </div>
+    <ul>
+      <li><strong>AWS IAM Role-Based Configuration:</strong> Implemented IAM role-based config for AWS deployments — instance roles, access/secret keys, cross-account trust — with a versioned vendor-agnostic schema.</li>
+      <li><strong>Licensing Module:</strong> Took complete ownership — migrated to VLIC format, built a Docker-based licensing service, implemented metering by disk size, and supported multiple license types with feature toggles.</li>
+      <li><strong>Telemetry Implementation:</strong> Designed configurable telemetry across services and queues with tiered controls for enterprise vs. trial licenses.</li>
+      <li><strong>Azure Marketplace Publishing:</strong> Delivered end-to-end product publishing covering compliance, deployment packaging, validation, and post-launch support.</li>
+    </ul>
+  </div>
+
+  <div class="resume-entry">
+    <div class="resume-entry-header">
+      <div>
+        <div class="resume-entry-title">Associate Software Engineer</div>
+        <div class="resume-entry-org">Veritas Technologies</div>
+      </div>
+      <div class="resume-entry-date">Jan 2016 – May 2019 &bull; Pune, India</div>
+    </div>
+    <ul>
+      <li><strong>Pure Storage Snapshot Orchestration:</strong> Extended snapshot support for Pure Storage as a new vendor integration within the CloudPoint product.</li>
+      <li><strong>Volume Manager — Escalations &amp; Maintenance:</strong> Owned customer escalations by delivering patches, creating test suites to validate multipathing, and resolving critical bugs across Linux (RHEL/SUSE), Solaris, and AIX.</li>
+      <li><strong>Periodic Asset Discovery:</strong> Contributed to the initial design and development of the configurable polling system for tracking cloud and on-premise asset changes.</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- ── Education ──────────────────────────────────────── -->
+<div class="resume-section">
+  <h2>Education</h2>
+
+  <div class="resume-entry">
+    <div class="resume-entry-header">
+      <div>
+        <div class="resume-entry-title">PG Diploma in Embedded Systems and Design</div>
+        <div class="resume-entry-org">Sunbeam CDAC ACTS, Pune</div>
+      </div>
+      <div class="resume-entry-date">2015</div>
+    </div>
+  </div>
+
+  <div class="resume-entry">
+    <div class="resume-entry-header">
+      <div>
+        <div class="resume-entry-title">B.E. in Electronics and Communication</div>
+        <div class="resume-entry-org">Leelavati Awhad Institute of Engineering, Mumbai University</div>
+      </div>
+      <div class="resume-entry-date">2014</div>
+    </div>
+  </div>
+
+  <div class="resume-entry">
+    <div class="resume-entry-header">
+      <div>
+        <div class="resume-entry-title">Diploma in Electronics and Communication</div>
+        <div class="resume-entry-org">S. S. Jondhle Polytechnic, Maharashtra State Board of Technical Education</div>
+      </div>
+      <div class="resume-entry-date">2011</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── Skills ─────────────────────────────────────────── -->
+<div class="resume-section">
+  <h2>Skills</h2>
+  <div class="skill-tags">
+    <span class="tag">Python</span>
+    <span class="tag">C / C++</span>
+    <span class="tag">Shell Scripting</span>
+    <span class="tag">Go</span>
+    <span class="tag">Docker</span>
+    <span class="tag">Kubernetes</span>
+    <span class="tag">Kafka</span>
+    <span class="tag">RabbitMQ</span>
+    <span class="tag">AWS (IAM, EC2)</span>
+    <span class="tag">Azure</span>
+    <span class="tag">GCP</span>
+    <span class="tag">NetApp (ZAPI, REST)</span>
+    <span class="tag">Dell EMC Isilon / PowerScale</span>
+    <span class="tag">Pure Storage FlashArray</span>
+    <span class="tag">Qumulo</span>
+    <span class="tag">NAS / SAN</span>
+    <span class="tag">Microservices</span>
+    <span class="tag">REST API Design</span>
+    <span class="tag">Snapshot Orchestration</span>
+    <span class="tag">Linux (RHEL/SUSE)</span>
+    <span class="tag">Solaris</span>
+    <span class="tag">AIX</span>
+    <span class="tag">Git</span>
+    <span class="tag">SQLite</span>
+  </div>
+</div>

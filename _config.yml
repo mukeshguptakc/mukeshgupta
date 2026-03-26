@@ -1,0 +1,16 @@
+title: Mukesh Gupta
+description: Backend Engineer
+url: "https://mukeshkcgupta.in"
+baseurl: ""
+
+author:
+  name: Mukesh Gupta
+  linkedin: https://www.linkedin.com/in/mukesh-gupta-847a54105/
+
+plugins:
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
