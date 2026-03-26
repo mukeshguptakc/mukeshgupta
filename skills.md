@@ -4,88 +4,81 @@ title: Skills
 ---
 
 <div class="page-header">
-  <h1>Skills</h1>
+  <h1><span>Skills</span> &amp; Stack</h1>
   <p>Technologies and tools I work with</p>
 </div>
 
-<div class="skills-section">
-  <h2>// languages</h2>
-  <div class="skill-tags">
-    <span class="tag">Python</span>
-    <span class="tag">C</span>
-    <span class="tag">C++</span>
-    <span class="tag">Shell Scripting</span>
-    <span class="tag">Go</span>
-  </div>
-</div>
+<div class="skills-grid">
 
-<div class="skills-section">
-  <h2>// distributed systems &amp; backend</h2>
-  <div class="skill-tags">
-    <span class="tag">Microservices</span>
-    <span class="tag">Event-Driven Architecture</span>
-    <span class="tag">Kafka</span>
-    <span class="tag">RabbitMQ</span>
-    <span class="tag">REST API Design</span>
-    <span class="tag">Async Processing Pipelines</span>
-    <span class="tag">Multi-Vendor SDK Integration</span>
-    <span class="tag">ctypes Bridging</span>
+  <div class="skill-box">
+    <div class="skill-box-title" style="color:var(--accent);">&#9000;&nbsp; Languages</div>
+    <div class="skill-tags">
+      <span class="tag tag-blue">Python</span>
+      <span class="tag tag-blue">C</span>
+      <span class="tag tag-blue">C++</span>
+      <span class="tag tag-blue">Shell Scripting</span>
+      <span class="tag tag-blue">Go</span>
+    </div>
   </div>
-</div>
 
-<div class="skills-section">
-  <h2>// containers &amp; orchestration</h2>
-  <div class="skill-tags">
-    <span class="tag">Docker</span>
-    <span class="tag">Kubernetes</span>
-    <span class="tag">Linux (RHEL / SUSE)</span>
-    <span class="tag">Solaris</span>
-    <span class="tag">AIX</span>
+  <div class="skill-box">
+    <div class="skill-box-title" style="color:var(--accent2);">&#9881;&nbsp; Distributed Systems &amp; Backend</div>
+    <div class="skill-tags">
+      <span class="tag tag-green">Microservices</span>
+      <span class="tag tag-green">Kafka</span>
+      <span class="tag tag-green">RabbitMQ</span>
+      <span class="tag tag-green">Event-Driven Architecture</span>
+      <span class="tag tag-green">REST API Design</span>
+      <span class="tag tag-green">Async Pipelines</span>
+      <span class="tag tag-green">ctypes Bridging</span>
+    </div>
   </div>
-</div>
 
-<div class="skills-section">
-  <h2>// cloud platforms</h2>
-  <div class="skill-tags">
-    <span class="tag">AWS (EC2, IAM, Cross-Account Trust)</span>
-    <span class="tag">Azure (ANF, Marketplace)</span>
-    <span class="tag">GCP</span>
-    <span class="tag">IAM &amp; Role-Based Access</span>
+  <div class="skill-box">
+    <div class="skill-box-title" style="color:var(--accent3);">&#128051;&nbsp; Containers &amp; OS</div>
+    <div class="skill-tags">
+      <span class="tag tag-purple">Docker</span>
+      <span class="tag tag-purple">Kubernetes</span>
+      <span class="tag tag-purple">Linux (RHEL/SUSE)</span>
+      <span class="tag tag-purple">Solaris</span>
+      <span class="tag tag-purple">AIX</span>
+    </div>
   </div>
-</div>
 
-<div class="skills-section">
-  <h2>// storage systems</h2>
-  <div class="skill-tags">
-    <span class="tag">NetApp (ZAPI, REST, NMSDK/OCUM)</span>
-    <span class="tag">Dell EMC Isilon / PowerScale</span>
-    <span class="tag">Dell EMC PowerMax / Unity</span>
-    <span class="tag">Pure Storage FlashArray</span>
-    <span class="tag">Qumulo (V1–V3)</span>
-    <span class="tag">NAS (NFS / SMB)</span>
-    <span class="tag">SAN</span>
+  <div class="skill-box">
+    <div class="skill-box-title" style="color:#fb923c;">&#9729;&nbsp; Cloud Platforms</div>
+    <div class="skill-tags">
+      <span class="tag tag-orange">AWS (EC2, IAM)</span>
+      <span class="tag tag-orange">Cross-Account Trust</span>
+      <span class="tag tag-orange">Azure ANF</span>
+      <span class="tag tag-orange">Azure Marketplace</span>
+      <span class="tag tag-orange">GCP</span>
+    </div>
   </div>
-</div>
 
-<div class="skills-section">
-  <h2>// data protection</h2>
-  <div class="skill-tags">
-    <span class="tag">Snapshot Orchestration</span>
-    <span class="tag">Snapshot-Diff / Incremental Backup</span>
-    <span class="tag">Replication Workflows</span>
-    <span class="tag">Consistency Groups</span>
-    <span class="tag">SQLite-backed Diff Storage</span>
+  <div class="skill-box">
+    <div class="skill-box-title" style="color:#22d3ee;">&#128452;&nbsp; Storage Systems</div>
+    <div class="skill-tags">
+      <span class="tag tag-cyan">NetApp (ZAPI, REST, NMSDK)</span>
+      <span class="tag tag-cyan">Dell EMC Isilon / PowerScale</span>
+      <span class="tag tag-cyan">Pure Storage FlashArray</span>
+      <span class="tag tag-cyan">Qumulo V1&ndash;V3</span>
+      <span class="tag tag-cyan">PowerMax / Unity</span>
+      <span class="tag tag-cyan">NAS (NFS/SMB)</span>
+      <span class="tag tag-cyan">SAN</span>
+    </div>
   </div>
-</div>
 
-<div class="skills-section">
-  <h2>// tools &amp; practices</h2>
-  <div class="skill-tags">
-    <span class="tag">Git</span>
-    <span class="tag">Jira</span>
-    <span class="tag">VS Code</span>
-    <span class="tag">Performance Tuning</span>
-    <span class="tag">Concurrency Debugging</span>
-    <span class="tag">Multi-OS Systems</span>
+  <div class="skill-box">
+    <div class="skill-box-title" style="color:#f87171;">&#128737;&nbsp; Data Protection</div>
+    <div class="skill-tags">
+      <span class="tag tag-red">Snapshot Orchestration</span>
+      <span class="tag tag-red">Incremental Backup</span>
+      <span class="tag tag-red">Snapshot-Diff Frameworks</span>
+      <span class="tag tag-red">Replication Workflows</span>
+      <span class="tag tag-red">Consistency Groups</span>
+      <span class="tag tag-red">SQLite-backed Storage</span>
+    </div>
   </div>
+
 </div>
