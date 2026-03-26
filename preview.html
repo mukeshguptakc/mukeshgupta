@@ -21,17 +21,17 @@
 
     /* Header */
     .site-header { position: sticky; top: 0; z-index: 100; background: rgba(13,17,23,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
-    .header-inner { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; height: 60px; display: flex; align-items: center; gap: 2rem; }
-    .site-name { font-family: var(--font-mono); font-size: 1rem; font-weight: 500; color: var(--accent2); white-space: nowrap; flex-shrink: 0; cursor: pointer; }
+    .header-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; height: 72px; display: flex; align-items: center; gap: 2rem; }
+    .site-name { font-family: var(--font-mono); font-size: 1.1rem; font-weight: 600; color: var(--accent2); white-space: nowrap; flex-shrink: 0; cursor: pointer; }
     .site-name:hover { opacity: 0.85; }
-    .site-nav { display: flex; gap: 0.25rem; margin-left: auto; }
-    .nav-link { font-size: 0.875rem; font-weight: 500; color: var(--muted); padding: 0.35rem 0.85rem; border-radius: 6px; transition: color 0.2s, background 0.2s; cursor: pointer; border: none; background: none; font-family: var(--font-sans); }
+    .site-nav { display: flex; gap: 0.5rem; margin-left: auto; }
+    .nav-link { font-size: 1rem; font-weight: 500; color: var(--muted); padding: 0.55rem 1.25rem; border-radius: 8px; transition: color 0.2s, background 0.2s; cursor: pointer; border: none; background: none; font-family: var(--font-sans); letter-spacing: 0.01em; }
     .nav-link:hover { color: var(--text); background: var(--bg-card); }
-    .nav-link.active { color: var(--accent); background: rgba(88,166,255,0.1); }
-    .nav-toggle { display: none; background: none; border: none; color: var(--text); font-size: 1.4rem; cursor: pointer; margin-left: auto; }
+    .nav-link.active { color: var(--accent); background: rgba(88,166,255,0.12); }
+    .nav-toggle { display: none; background: none; border: none; color: var(--text); font-size: 1.6rem; cursor: pointer; margin-left: auto; }
 
     /* Content */
-    .site-content { max-width: 960px; margin: 0 auto; padding: 3rem 1.5rem; width: 100%; flex: 1; }
+    .site-content { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; width: 100%; flex: 1; }
     .page { display: none; }
     .page.active { display: block; }
 
