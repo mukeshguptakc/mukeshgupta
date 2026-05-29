@@ -1,6 +1,6 @@
 # mukeshkcgupta.in
 
-Personal portfolio and resume website for **Mukesh Gupta** — Member of Technical Staff III at Cohesity, with 10+ years of experience in distributed storage, data protection, and cloud-native backend engineering.
+Personal portfolio and resume website for **Mukesh Gupta** — Member of Technical Staff III at Cohesity, with a decade of experience in distributed storage, data protection, and cloud-native backend engineering.
 
 🌐 **Live site:** [mukeshkcgupta.in](https://mukeshkcgupta.in)
 
@@ -20,16 +20,14 @@ Personal portfolio and resume website for **Mukesh Gupta** — Member of Technic
 
 ## Tech Stack
 
-- **Jekyll** — static site generator, natively supported by GitHub Pages
-- **Custom CSS** — dark theme, no frameworks
+- **Jekyll 4** — static site generator
+- **Custom CSS** — light, minimal, text-first theme with a single accent colour, no frameworks
 - **Fonts** — Inter (UI) + JetBrains Mono (code/labels) via Google Fonts
-- **Hosting** — GitHub Pages with custom domain
+- **Hosting** — GitHub Pages with a custom domain, deployed via GitHub Actions (`.github/workflows/jekyll.yml`) on every push to `main`
 
 ---
 
 ## Local Preview
-
-### Option A — Jekyll (full build)
 
 Requires Ruby 3.x and Bundler:
 
@@ -39,10 +37,6 @@ bundle install
 bundle exec jekyll serve
 # Open http://localhost:4000
 ```
-
-### Option B — Static preview (no Ruby needed)
-
-Open `preview.html` directly in any browser — fully self-contained, no dependencies.
 
 ---
 
@@ -60,7 +54,6 @@ mukeshgupta/
 ├── skills.md            # Skills
 ├── projects.md          # Projects
 ├── resume.md            # Online resume (LinkedIn only, no contact)
-├── preview.html         # Self-contained static preview
 └── CNAME                # Custom domain config
 ```
 
