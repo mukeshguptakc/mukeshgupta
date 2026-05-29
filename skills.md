@@ -4,14 +4,14 @@ title: Skills
 ---
 
 <div class="page-header">
-  <h1><span>Skills</span> &amp; Stack</h1>
-  <p>Technologies and tools I work with</p>
+  <h1><span>Skills</span> &amp; stack</h1>
+  <p>The languages, systems, and tools I reach for &mdash; grouped by where they fit.</p>
 </div>
 
 <div class="skills-grid">
 
   <div class="skill-box">
-    <div class="skill-box-title" style="color:var(--accent);">&#9000;&nbsp; Languages</div>
+    <div class="skill-box-title">&#9000;&nbsp; Languages</div>
     <div class="skill-tags">
       <span class="tag tag-blue">Python</span>
       <span class="tag tag-blue">C</span>
@@ -22,7 +22,7 @@ title: Skills
   </div>
 
   <div class="skill-box">
-    <div class="skill-box-title" style="color:var(--accent2);">&#9881;&nbsp; Distributed Systems &amp; Backend</div>
+    <div class="skill-box-title">&#9881;&nbsp; Distributed Systems &amp; Backend</div>
     <div class="skill-tags">
       <span class="tag tag-green">Microservices</span>
       <span class="tag tag-green">Kafka</span>
@@ -35,7 +35,7 @@ title: Skills
   </div>
 
   <div class="skill-box">
-    <div class="skill-box-title" style="color:var(--accent3);">&#128051;&nbsp; Containers &amp; OS</div>
+    <div class="skill-box-title">&#128051;&nbsp; Containers &amp; OS</div>
     <div class="skill-tags">
       <span class="tag tag-purple">Docker</span>
       <span class="tag tag-purple">Kubernetes</span>
@@ -46,7 +46,7 @@ title: Skills
   </div>
 
   <div class="skill-box">
-    <div class="skill-box-title" style="color:#fb923c;">&#9729;&nbsp; Cloud Platforms</div>
+    <div class="skill-box-title">&#9729;&nbsp; Cloud Platforms</div>
     <div class="skill-tags">
       <span class="tag tag-orange">AWS (EC2, IAM)</span>
       <span class="tag tag-orange">Cross-Account Trust</span>
@@ -57,7 +57,7 @@ title: Skills
   </div>
 
   <div class="skill-box">
-    <div class="skill-box-title" style="color:#22d3ee;">&#128452;&nbsp; Storage Systems</div>
+    <div class="skill-box-title">&#128452;&nbsp; Storage Systems</div>
     <div class="skill-tags">
       <span class="tag tag-cyan">NetApp (ZAPI, REST, NMSDK)</span>
       <span class="tag tag-cyan">Dell EMC Isilon / PowerScale</span>
@@ -70,7 +70,7 @@ title: Skills
   </div>
 
   <div class="skill-box">
-    <div class="skill-box-title" style="color:#f87171;">&#128737;&nbsp; Data Protection</div>
+    <div class="skill-box-title">&#128737;&nbsp; Data Protection</div>
     <div class="skill-tags">
       <span class="tag tag-red">Snapshot Orchestration</span>
       <span class="tag tag-red">Incremental Backup</span>

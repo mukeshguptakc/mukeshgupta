@@ -18,10 +18,10 @@ title: Resume
 
 <div class="resume-section">
   <div class="resume-section-title">Summary</div>
-  <ul style="padding-left:1.2rem;color:var(--muted);font-size:0.95rem;">
-    <li style="margin-bottom:0.6rem;">10+ years of backend and systems engineering, specialising in distributed storage, data protection, and cloud-native platform development across enterprise-scale products.</li>
-    <li style="margin-bottom:0.6rem;">Delivered production features spanning microservices (Docker/Kubernetes), event-driven messaging (Kafka, RabbitMQ), cloud platforms (AWS, Azure), and system-level C/C++ and Python development.</li>
-    <li>Proven track record owning the full engineering lifecycle: architecture exploration, multi-vendor API integration, customer POC delivery, and hotfix turnaround under aggressive timelines.</li>
+  <ul style="padding-left:1.1rem;color:var(--text);font-size:0.93rem;display:flex;flex-direction:column;gap:0.45rem;">
+    <li>A decade building backend and systems software for enterprise data protection &mdash; distributed storage, snapshots, and cloud-native platforms that ship to real customers at scale.</li>
+    <li>Comfortable up and down the stack: system-level C/C++ and Python, microservices on Docker/Kubernetes, event-driven messaging with Kafka and RabbitMQ, and cloud integration across AWS and Azure.</li>
+    <li>I take features from first sketch to production &mdash; architecture exploration, multi-vendor API integration, customer POCs, and the occasional hotfix that has to land under a tight deadline.</li>
   </ul>
 </div>
 
@@ -38,11 +38,11 @@ title: Resume
         <div class="timeline-date">Dec 2024 &ndash; Present &bull; Pune</div>
       </div>
       <ul>
-        <li><strong>Qumulo Multi-Tenancy:</strong> Migrated plugin from legacy V1/V2 to V3 APIs, designed Tenant-ID-to-VLAN mapping, refactored snapshot/export/deletion flows preserving backward compatibility.</li>
-        <li><strong>Pure Storage FlashArray File Services:</strong> Integrated REST 2.x APIs and SDK enabling reliable NFS/SMB multi-protocol share deployment.</li>
-        <li><strong>Isilon SDK Bug Fix:</strong> Root-caused snapshot-diff failures to a hardcoded size-validation defect (&gt;4 GB files), patched and delivered tested build to QA within days.</li>
-        <li><strong>PowerScale POC:</strong> Simulated full PowerScale environment in-house; validated SmartConnect DNS delegation, load balancing, failover, and SMB Multichannel.</li>
-        <li><strong>Azure NetApp Files:</strong> Analysed ANF architecture; consolidated findings into reusable internal guidelines for future backup workflow support.</li>
+        <li><strong>Qumulo multi-tenancy:</strong> Carried the plugin from legacy V1/V2 to the V3 APIs, designed Tenant-ID-to-VLAN mapping, and reworked the snapshot, export, and deletion flows &mdash; all without breaking existing single-tenant deployments.</li>
+        <li><strong>Pure Storage FlashArray File Services:</strong> Integrated the REST 2.x APIs and SDK to make NFS/SMB multi-protocol share deployment dependable.</li>
+        <li><strong>Isilon SDK fix:</strong> Traced intermittent snapshot-diff failures to a hardcoded size-validation defect on files over 4&nbsp;GB; patched it and handed QA a tested build within days.</li>
+        <li><strong>PowerScale POC:</strong> Stood up a full PowerScale environment in-house and validated SmartConnect (DNS delegation, load balancing, failover) and SMB Multichannel end to end.</li>
+        <li><strong>Azure NetApp Files:</strong> Mapped out the ANF architecture and turned the findings into reusable internal guidelines for the team's future backup work.</li>
       </ul>
     </div>
 
@@ -55,10 +55,10 @@ title: Resume
         <div class="timeline-date">Mar 2022 &ndash; Nov 2024 &bull; Pune</div>
       </div>
       <ul>
-        <li><strong>Cross-Vendor NAS Enablement:</strong> Implemented core APIs to extend NAS (NFS/SMB) support across multiple on-premise storage vendors; mentored team on integration patterns.</li>
-        <li><strong>NetApp Replication:</strong> Designed vendor-agnostic replication format; multi-threaded API handling improved discovery performance by <strong>over 80%</strong>.</li>
-        <li><strong>Snapshot Diff Infrastructure:</strong> Built reusable snapshot-diff framework bridging C SDK into Python via ctypes, backed by SQLite.</li>
-        <li><strong>SAN Consistency Group Snapshots:</strong> Standardised REST API payloads across Pure FlashArray, PowerMax, and EMC Unity for simultaneous point-in-time backups.</li>
+        <li><strong>Cross-vendor NAS enablement:</strong> Built the core APIs that extended NAS (NFS/SMB) support across multiple on-premise storage vendors, and mentored the team on the integration patterns behind them.</li>
+        <li><strong>NetApp replication:</strong> Designed a vendor-agnostic replication format; multi-threading the API calls cut discovery time by <strong>over 80%</strong>.</li>
+        <li><strong>Snapshot-diff infrastructure:</strong> Built a reusable snapshot-diff framework that bridges a C SDK into Python via ctypes, backed by SQLite.</li>
+        <li><strong>SAN consistency-group snapshots:</strong> Standardised the REST payloads across Pure FlashArray, PowerMax, and EMC Unity so multi-volume backups capture a true simultaneous point-in-time.</li>
       </ul>
     </div>
 
@@ -71,9 +71,9 @@ title: Resume
         <div class="timeline-date">Jun 2019 &ndash; Mar 2022 &bull; Pune</div>
       </div>
       <ul>
-        <li><strong>AWS IAM Role-Based Config:</strong> Implemented instance roles, access keys, and cross-account trust with versioned vendor-agnostic schema.</li>
-        <li><strong>Licensing Module:</strong> Built Docker-based licensing service (VLIC format), metering by disk size, multiple license types with feature toggles.</li>
-        <li><strong>Azure Marketplace:</strong> Delivered end-to-end product publishing &mdash; compliance, packaging, validation, post-launch support.</li>
+        <li><strong>AWS IAM role-based config:</strong> Implemented instance roles, access keys, and cross-account trust behind a versioned, vendor-agnostic schema so upgrades stayed seamless.</li>
+        <li><strong>Licensing module:</strong> Built a Docker-based licensing service (VLIC format) that meters by disk size and supports multiple license types with feature toggles.</li>
+        <li><strong>Azure Marketplace:</strong> Took a product through end-to-end publishing &mdash; compliance, packaging, validation, and post-launch support.</li>
       </ul>
     </div>
 
@@ -86,8 +86,8 @@ title: Resume
         <div class="timeline-date">Jan 2016 &ndash; May 2019 &bull; Pune</div>
       </div>
       <ul>
-        <li><strong>Pure Storage Integration:</strong> Extended snapshot support for Pure Storage as a new vendor within CloudPoint.</li>
-        <li><strong>Volume Manager Escalations:</strong> Resolved critical multipathing bugs across Linux (RHEL/SUSE), Solaris, and AIX.</li>
+        <li><strong>Pure Storage integration:</strong> Brought Pure Storage in as a new vendor within CloudPoint, extending snapshot support to its arrays.</li>
+        <li><strong>Volume Manager escalations:</strong> Resolved critical multipathing bugs across Linux (RHEL/SUSE), Solaris, and AIX &mdash; the kind that only surface under real customer load.</li>
       </ul>
     </div>
 

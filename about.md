@@ -4,32 +4,37 @@ title: About
 ---
 
 <div class="page-header">
-  <h1>About <span>Me</span></h1>
-  <p>Backend &amp; systems engineer with 10+ years in distributed storage and cloud-native platforms</p>
+  <h1>About <span>me</span></h1>
+  <p>A decade spent making storage, backup, and the cloud work well together.</p>
 </div>
 
 <div class="about-grid">
   <div class="about-bio">
-    <p>I'm <strong>Mukesh Gupta</strong>, a Member of Technical Staff III (MTS-III) at Cohesity, specialising in distributed storage, data protection, and cloud-native backend platform development. Over a decade, I've built and shipped enterprise-scale features at <strong>Cohesity</strong> and <strong>Veritas Technologies</strong>.</p>
-    <p>My work spans the full engineering lifecycle — from architecture exploration and multi-vendor API integration to customer POC delivery and hotfix turnaround under aggressive timelines. I've worked deep in storage systems (NAS/SAN), cloud platforms (AWS, Azure), and microservices infrastructure (Docker, Kubernetes, Kafka).</p>
-    <p>I enjoy working at the intersection of systems programming and backend engineering — whether that's bridging C SDKs into Python with ctypes, designing snapshot-diff frameworks backed by SQLite, or debugging multi-OS concurrency issues across Linux, Solaris, and AIX.</p>
-    <div style="margin-top:1.75rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
-      <a href="https://www.linkedin.com/in/mukesh-gupta-847a54105/" target="_blank" rel="noopener" class="btn btn-outline">Connect on LinkedIn &rarr;</a>
-      <a href="/resume" class="btn btn-ghost">View Resume</a>
+    <p>I'm <strong>Mukesh Gupta</strong>, a Member of Technical Staff III at Cohesity. For the last ten years &mdash; first at <strong>Veritas Technologies</strong>, now at <strong>Cohesity</strong> &mdash; I've worked on enterprise data protection: the software that backs up, snapshots, and restores the data companies can't afford to lose.</p>
+
+    <p>That has put me in the middle of a remarkably varied storage landscape. NetApp, Dell EMC, Pure Storage, Qumulo &mdash; each one solves the same problem in its own way, with its own APIs, quirks, and strengths. My job is to learn what makes each one distinct and then make our product feel like it was built for it all along. Done well, an integration disappears; it just works, and nobody thinks about the seams.</p>
+
+    <p>In practice that's meant some genuinely fun engineering: bridging a C SDK into Python with ctypes, building a snapshot-diff framework backed by SQLite, standardising consistency-group snapshots across SAN vendors, and untangling concurrency bugs that only showed up on Solaris or AIX. I tend to own work end to end &mdash; from the first architecture spike to the customer POC to the hotfix that has to land tonight.</p>
+
+    <p>The part I didn't expect to enjoy as much is the teaching. I like running knowledge-transfer sessions, walking teammates through a tricky vendor behaviour before it bites them, and writing things down so the next person doesn't have to rediscover them. After a decade I'm still most engaged by the questions that don't have an obvious answer &mdash; the ones that make you understand how a system <em>really</em> works underneath.</p>
+
+    <div class="home-actions">
+      <a href="/projects" class="btn btn-outline">See the work &rarr;</a>
+      <a href="/resume" class="btn btn-ghost">Full résumé</a>
     </div>
   </div>
 
-  <div class="interests-box">
-    <h3>// INTERESTS</h3>
+  <aside class="interests-box">
+    <h3>// WHAT I CARE ABOUT</h3>
     <ul class="interests-list">
-      <li>Distributed Systems &amp; Architecture</li>
-      <li>Storage Systems (NAS / SAN)</li>
-      <li>Containers &amp; Orchestration</li>
-      <li>Cloud Platforms (AWS, Azure, GCP)</li>
-      <li>Event-Driven Microservices</li>
-      <li>Data Protection &amp; Snapshot Engineering</li>
-      <li>Systems-Level Programming (C / Python)</li>
-      <li>Embedded Linux &amp; Device Drivers</li>
+      <li>Distributed systems &amp; architecture</li>
+      <li>Storage internals (NAS &amp; SAN)</li>
+      <li>Snapshots &amp; data protection</li>
+      <li>Containers &amp; orchestration</li>
+      <li>Cloud platforms (AWS, Azure)</li>
+      <li>Event-driven microservices</li>
+      <li>Systems programming in C &amp; Python</li>
+      <li>Mentoring &amp; clear documentation</li>
     </ul>
-  </div>
+  </aside>
 </div>
